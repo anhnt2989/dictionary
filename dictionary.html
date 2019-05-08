@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dictionary</title>
+</head>
+<h1>Từ điển Anh-Việt (English-Vietnamese dictionary)</h1>
+<body>
+<textarea id="inp" cols="50" rows="5"></textarea>
+<input type="button" value="Dịch sang tiếng Việt" onclick="transfromeng();">
+<input type="button" value="Translate into English" onclick="transfromvie();">
+<textarea readonly  id="outp" cols="50" rows="5"></textarea>
+        <script>
+            let Eng = ["eat", "sleep", 'play'];
+            let Vie = ["ăn", "ngủ", "chơi"];
+            let input = document.getElementById("inp").value;
+            let word = input.toString();
+            function transfromeng() {
+                for (let i = 0; i < Eng.length; i++) {
+                    if (word === Eng[i]) {
+                        document.getElementById("outp").innerHTML = Vie[i];
+                        break;
+                    } else {
+                        document.getElementById("outp").innerHTML = "Không tìm thấy!";
+                    }
+                }
+            }
+            function transfromvie() {
+                for (let j=0; j<Vie.length; j++) {
+                    if (word === Vie[j]) {
+                        document.getElementById("outp").innerHTML = Eng[j];
+                        break;
+                    } else {
+                        document.getElementById("outp").innerHTML = "not found";
+                    }
+                }
+
+            }
+
+        </script>
+</body>
+</html>
